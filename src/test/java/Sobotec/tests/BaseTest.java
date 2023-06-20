@@ -10,7 +10,7 @@ import org.testng.annotations.BeforeMethod;
 
 import java.time.Duration;
 
-public class BaseTest {
+public abstract class  BaseTest {
     protected WebDriver driver;
     protected WebDriverWait driverWait;
     protected LoginPage loginPage;
