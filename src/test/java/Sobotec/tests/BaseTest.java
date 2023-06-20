@@ -1,6 +1,7 @@
 package Sobotec.tests;
 
 import Sobotec.pages.LoginPage;
+import Sobotec.pages.SystemsPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -14,6 +15,7 @@ public abstract class  BaseTest {
     protected WebDriver driver;
     protected WebDriverWait driverWait;
     protected LoginPage loginPage;
+    private SystemsPage systemsPage;
 
 
 
@@ -28,7 +30,7 @@ public abstract class  BaseTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(12));
 
         loginPage = new LoginPage(driver, driverWait);
-
+        systemsPage = new SystemsPage(driver, driverWait);
 
     }
     @BeforeMethod
