@@ -54,7 +54,7 @@ public abstract class  BaseTest {
     @AfterClass
     public void afterClass() throws InterruptedException {
         Thread.sleep(3000);
-        // driver.quit();
+        driver.quit();
     }
 
 }
