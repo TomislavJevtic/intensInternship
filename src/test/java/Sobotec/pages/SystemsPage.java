@@ -1,6 +1,7 @@
 package Sobotec.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -39,6 +40,12 @@ public class SystemsPage extends BasePage{
 
     public WebElement getComponentSelect() {
         return getDriver().findElement(componentSelect);
+    }
+
+    public void selectCategory (String categoryName) {
+        getCategorySelect().sendKeys(categoryName);
+        getCategorySelect().sendKeys(Keys.ARROW_DOWN, Keys.ENTER);
+
     }
 
 // driver.findElement(By.id("ctl00_ContentPlaceHolder1_RadGrid1_ctl00_ctl02_ctl02_EditFormControl_rcbControllerType1_Input")).sendKeys("ValueTwo", Keys.ARROW_DOWN, Keys.ENTER)
