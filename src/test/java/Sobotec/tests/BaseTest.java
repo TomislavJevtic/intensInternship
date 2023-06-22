@@ -21,7 +21,7 @@ public abstract class  BaseTest {
     protected WebDriver driver;
     protected WebDriverWait driverWait;
     protected LoginPage loginPage;
-    private SystemsPage systemsPage;
+    protected SystemsPage systemsPage;
 
     protected ProjectPage projectPage;
 
@@ -62,5 +62,10 @@ public abstract class  BaseTest {
 
         driver.quit();
     }
+
+    public WebDriverWait getDriverWait() {
+        return driverWait;
+    }
+    public SystemsPage getSystemsPage() {return systemsPage;}
 
 }
