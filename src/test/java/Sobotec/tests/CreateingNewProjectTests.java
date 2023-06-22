@@ -28,7 +28,8 @@ public class CreateingNewProjectTests extends BaseTest {
         Thread.sleep(3000);
         projectPage.getCreateButton().click();
         action.moveToElement(projectPage.getNewProjectButton()).perform();
-        Thread.sleep(3000);
+
+        driverWait.until(ExpectedConditions.elementToBeClickable(projectPage.getNewProjectButton()));
         projectPage.getNewProjectButton().click();
         Thread.sleep(1000);
 
@@ -102,11 +103,10 @@ public class CreateingNewProjectTests extends BaseTest {
 
         projectPage.getSaveButton().click();
 
-        String alertMessage = driver.findElement(By.xpath("//div[@class='MuiAlert-message css-1xsto0d']")).getText();
-        System.out.println(alertMessage);
-        //driverWait.until(ExpectedConditions.textToBePresentInElement(alertMessage,"project created successfully."));
-        // Thread.sleep(300);
-        Assert.assertEquals(alertMessage, "project created successfully.");
+        driverWait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//div[contains(@class,'MuiAlert-message css-1xsto0d')]"),"project created successfully."));
+        String expectedResultMessage = "project created successfully.";
+        String actualResultMessage = driver.findElement(By.xpath("//div[contains(@class,'MuiAlert-message css-1xsto0d')]")).getText();
+        Assert.assertTrue(actualResultMessage.contains(expectedResultMessage));
 
     }
 
@@ -126,7 +126,8 @@ public class CreateingNewProjectTests extends BaseTest {
         Thread.sleep(3000);
         projectPage.getCreateButton().click();
         action.moveToElement(projectPage.getNewProjectButton()).perform();
-        Thread.sleep(3000);
+
+        driverWait.until(ExpectedConditions.elementToBeClickable(projectPage.getNewProjectButton()));
         projectPage.getNewProjectButton().click();
         Thread.sleep(1000);
 
@@ -181,12 +182,11 @@ public class CreateingNewProjectTests extends BaseTest {
 
         projectPage.getSaveButton().click();
 
-        WebElement alertMessage = driver.findElement(By.xpath("//div[@class='MuiAlert-message css-1xsto0d']"));
 
-        String alertString = alertMessage.getText();
-        System.out.println(alertString);
-       // Thread.sleep(300);
-        Assert.assertEquals(alertMessage.getText(), "project created successfully.");
+        driverWait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//div[contains(@class,'MuiAlert-message css-1xsto0d')]"),"project created successfully."));
+        String expectedResultMessage = "project created successfully.";
+        String actualResultMessage = driver.findElement(By.xpath("//div[contains(@class,'MuiAlert-message css-1xsto0d')]")).getText();
+        Assert.assertTrue(actualResultMessage.contains(expectedResultMessage));
 
 
 

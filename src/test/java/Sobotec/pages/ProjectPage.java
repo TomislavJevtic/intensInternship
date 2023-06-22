@@ -15,7 +15,7 @@ public class ProjectPage extends BasePage {
             ("/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/input[1]");
 
     private By createButton = By.cssSelector("div[id='createButton'] button[type='button']");
-    private By newProjectButton = By.xpath("/html/body/div[5]/div[3]/ul");
+    private By newProjectButton = By.xpath("//body/div[5]//ul[@role='menu']/li[@role='menuitem']//div[@class='text-menu']");
 
     private By projectNameField = By.name("projectName");
     private By projectNumberField = By.name("projectNumber");
