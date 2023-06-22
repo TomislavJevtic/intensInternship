@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
@@ -49,11 +50,16 @@ public abstract class  BaseTest {
     @BeforeMethod
     public void methodSetup() {
         driver.get("https://sobotec.azurewebsites.net/");
-        driver.manage().deleteAllCookies();
+       // driver.manage().deleteAllCookies();
     }
+//    @AfterMethod
+//    public void afterMethod() throws InterruptedException {
+//        Thread.sleep(1000);
+//        driver.quit();
+  //  }
     @AfterClass
-    public void afterClass() throws InterruptedException {
-        Thread.sleep(3000);
+    public void afterClass()  {
+
         driver.quit();
     }
 
