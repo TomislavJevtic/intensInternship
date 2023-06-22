@@ -15,7 +15,7 @@ public abstract class  BaseTest {
     protected WebDriver driver;
     protected WebDriverWait driverWait;
     protected LoginPage loginPage;
-    private SystemsPage systemsPage;
+    protected SystemsPage systemsPage;
 
 
 
@@ -43,5 +43,10 @@ public abstract class  BaseTest {
         Thread.sleep(3000);
         driver.quit();
     }
+
+    public WebDriverWait getDriverWait() {
+        return driverWait;
+    }
+    public SystemsPage getSystemsPage() {return systemsPage;}
 
 }
