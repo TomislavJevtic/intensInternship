@@ -225,7 +225,6 @@ public class CreateInventoryComponentFromSystemTests extends BaseTest {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        C:\Users\dark0\IdeaProjects\IntensTEST\intensInternship\src\test\java\Sobotec\tests\CreateInventoryComponentFromSystemTests.java
     }
 
 
